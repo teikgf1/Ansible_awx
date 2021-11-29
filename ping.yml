@@ -4,6 +4,8 @@
   tasks:
     - action: ping
       when: ostype != 'windows'
-      action: win_ping
+    - action: win_ping
       when: ostype == 'windows'
+    
+
     
