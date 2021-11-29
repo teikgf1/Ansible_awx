@@ -1,0 +1,8 @@
+- name: Update all nodes
+  hosts: all
+  gather_facts: yes
+  tasks:
+  - name: restart
+    shell: init 6
+    when: ostype == 'Linux'
+    become: true
