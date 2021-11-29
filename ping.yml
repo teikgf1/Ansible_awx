@@ -8,6 +8,6 @@
       when: ostype == 'windows'
     - name: debug distribution
       debug:
-        msg: "{{ ansible_facts }}"
+        msg: "{{ ansible_facts.distribution }}"
 
     
