@@ -1,0 +1,13 @@
+- name: Update all nodes
+  hosts: all
+  gather_facts: yes
+  tasks:
+  - name: upgrade all packages
+    yum: name=* state=latest
+    when: ansible_facts.distribution == 'CentOS'
+  - name: upgrade all packages
+    zypper: name=* state=latest
+    when: ansible_facts.distribution == 'openSUSE Leap'
+  - name: upgrade all packages
+    apt: name=* state=latest
+    when: ansible_facts.distribution == 'Ubuntu'
