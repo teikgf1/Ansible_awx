@@ -3,4 +3,7 @@
   gather_facts: yes
   tasks:
     - action: ping
+      when: ostier != 'windows'
+      action: win_ping
+      when: ostier == 'windows'
     
